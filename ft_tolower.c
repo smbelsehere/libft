@@ -6,7 +6,7 @@
 /*   By: navera-m <navera-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:17:55 by navera-m          #+#    #+#             */
-/*   Updated: 2024/10/09 15:21:28 by navera-m         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:48:28 by navera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	if ((c >= 65 && c <= 88))
+	if ((c >= 65 && c <= 90))
 		(c += 32);
 	return (c);
-}
-
-int	main(void)
-{
-	int	c = 'K';
-	
-	printf("%c", ft_tolower(c));
-	return (0);
 }

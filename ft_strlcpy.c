@@ -6,7 +6,7 @@
 /*   By: navera-m <navera-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 13:20:09 by navera-m          #+#    #+#             */
-/*   Updated: 2024/10/11 16:14:18 by navera-m         ###   ########.fr       */
+/*   Updated: 2024/10/21 13:44:40 by navera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	int		len;
-	
+
 	len = ft_strlen(src);
 	i = 0;
 	if (size > 0)

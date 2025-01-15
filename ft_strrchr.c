@@ -6,7 +6,7 @@
 /*   By: navera-m <navera-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:42:04 by navera-m          #+#    #+#             */
-/*   Updated: 2024/09/30 15:42:54 by navera-m         ###   ########.fr       */
+/*   Updated: 2024/11/26 16:43:01 by navera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,35 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*t;
-	int		len;
+	char	*p;
+	char	lastc;
+	int		i;
 
-	t = (char *)s;
-	len = ft_strlen(t);
-	t = t + len;
-	while (len >= 0)
+	p = NULL;
+	lastc = (char)c;
+	i = 0;
+	while (s[i])
 	{
-		if (*t == c)
-			return (t);
-		t--;
-		len--;
+		if (s[i] == lastc)
+			p = (char *)&s[i];
+		s--;
+		i++;
+		if (s[i] == '\0')
+			s--;
+		i++;
 	}
-	if (*t == '\0')
-		return (t);
-	return (t);
+	if (s[i] == lastc)
+		p = (char *)&s[i];
+	return (p);
 }
 
-int	main(void)
+/* int main (void)
 {
-	const char	s1[] = "ALA";
-	char	ch = 'A';
-	char	*result;
+	char	p[] = "la\0las\0lt";
+	char	c = 'l';
+	char	*r;
 
-	result = ft_strrchr(s1, ch);
-	printf("Ultima aparacion de %c en %s esta en posicion esta en posicion %ld\n", ch, result, result - s1);
+	r = ft_strrchr(p, c);
+	printf("%s\n", r);
 	return (0);
-}
+} */

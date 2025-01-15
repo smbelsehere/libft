@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: navera-m <navera-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 15:21:44 by navera-m          #+#    #+#             */
-/*   Updated: 2025/01/13 19:14:08 by navera-m         ###   ########.fr       */
+/*   Created: 2024/10/16 13:30:33 by navera-m          #+#    #+#             */
+/*   Updated: 2024/11/06 16:15:16 by navera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned char	*p;
-
-	p = malloc(nmemb * size);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, (nmemb * size));
-	return (p);
+	write(fd, s, ft_strlen(s));
 }
-/* int main (void)
-{
-	char	*p;
-
-	p = ft_calloc(5, sizeof(char));
-	free(p);
-	return (0);
-} */

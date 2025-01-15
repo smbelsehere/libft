@@ -6,7 +6,7 @@
 /*   By: navera-m <navera-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 11:36:51 by navera-m          #+#    #+#             */
-/*   Updated: 2024/10/15 12:13:44 by navera-m         ###   ########.fr       */
+/*   Updated: 2024/11/04 14:44:32 by navera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*s3;
 	size_t	size;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	size = (ft_strlen(s1) + ft_strlen(s2)) + 1;
 	s3 = malloc (sizeof(char) * size);
@@ -38,14 +38,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	s3[i + j] = '\0';
 	return (s3);
 }
-
-/* int main (void)
-{
-	char	s1[]= "Hola";
-	char	s2[] = "Maro";
-	char	*k;
-
-	k = ft_strjoin(s1, s2);
-	printf("%s\n", k);
-	return (0);
-} */

@@ -6,13 +6,15 @@
 /*   By: navera-m <navera-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:54:36 by navera-m          #+#    #+#             */
-/*   Updated: 2024/09/12 16:30:30 by navera-m         ###   ########.fr       */
+/*   Updated: 2024/11/04 13:35:40 by navera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
 	if ((c >= 32 && c <= 126))
-		return(1);
-	return(0);
+		return (1);
+	return (0);
 }

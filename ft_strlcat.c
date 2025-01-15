@@ -6,7 +6,7 @@
 /*   By: navera-m <navera-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 13:26:14 by navera-m          #+#    #+#             */
-/*   Updated: 2024/10/14 14:10:15 by navera-m         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:16:01 by navera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,18 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		len;
-	int		leng;
-	int		i;
-	
-	len = ft_strlen(src);
-	leng = ft_strlen(dst);
+	size_t		len;
+	size_t		i;
+
+	len = ft_strlen(dst);
 	i = 0;
-	if (leng == size)
-		return (leng + len);
-	if (size > (leng + len))
+	if (len >= size)
+		return (size + ft_strlen(src));
+	while (src[i] != '\0' && i < (size - len - 1))
 	{
-		while ((size - 1) > i && src [i] != '\0')
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		dst[len + i] = src[i];
+		i++;
 	}
-	return (leng + len);
+	dst[len + i] = '\0';
+	return (len + ft_strlen(src));
 }
-
-/*  int	main(void)
-{
-	char	dst[] = "string";
-	char	src[] = "append";
-
-	printf("%zu\n",ft_strlcat(dst, src, 20));
-	printf("%s\n", dst);
-	return (0);
-} */

@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: navera-m <navera-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 15:21:44 by navera-m          #+#    #+#             */
-/*   Updated: 2025/01/13 19:14:08 by navera-m         ###   ########.fr       */
+/*   Created: 2024/10/16 15:26:39 by navera-m          #+#    #+#             */
+/*   Updated: 2024/11/12 11:24:31 by navera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int,
+char*))
 {
-	unsigned char	*p;
+	int	i;
 
-	p = malloc(nmemb * size);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, (nmemb * size));
-	return (p);
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
-/* int main (void)
-{
-	char	*p;
-
-	p = ft_calloc(5, sizeof(char));
-	free(p);
-	return (0);
-} */

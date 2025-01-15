@@ -6,7 +6,7 @@
 /*   By: navera-m <navera-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:23:19 by navera-m          #+#    #+#             */
-/*   Updated: 2024/10/09 15:17:33 by navera-m         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:48:07 by navera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if ((c >= 97 && c <= 120))
+	if ((c >= 97 && c <= 122))
 		(c -= 32);
 	return (c);
-}
-
-int	main(void)
-{
-	int	c = 'w';
-	
-	printf("%c", ft_toupper(c));
-	return (0);
 }

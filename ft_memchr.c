@@ -6,7 +6,7 @@
 /*   By: navera-m <navera-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:39:36 by navera-m          #+#    #+#             */
-/*   Updated: 2024/10/10 16:08:43 by navera-m         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:54:33 by navera-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,17 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*s1;
-	int			i;
-	
+	unsigned char	letra;
+	size_t			i;
+
 	s1 = (unsigned char *)s;
+	letra = (unsigned char)c;
 	i = 0;
-	while (i < n && s1[i] != c && s1[i] != '\0')
+	while (i < n)
+	{
+		if (s1[i] == letra)
+			return (&s1[i]);
 		i++;
-	if (s1[i] == c)
-		return (&s1[i]);
+	}
 	return (NULL);
 }
-/*int main (void)
-{
-	char	s[]= "naomi";
-	unsigned char	*x;
-	char	c= '0';
-
-	x = ft_memchr(s, c, 5);
-	printf("%s\n",x);
-	x = memchr(s, c, 5);
-	printf("%s\n",x);
-	return (0);
-}*/
